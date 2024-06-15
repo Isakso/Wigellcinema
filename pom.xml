@@ -69,13 +69,15 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Example: Spring Cloud dependencies management -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>${spring-cloud.version}</version> <!-- Ensure version is managed centrally -->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- Other managed dependencies -->
         </dependencies>
     </dependencyManagement>
 
