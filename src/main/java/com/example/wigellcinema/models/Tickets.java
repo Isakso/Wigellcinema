@@ -8,7 +8,6 @@ public class Tickets {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ticket_id")
     private int id;
-
     @Column(name = "ticket_type")
     private String ticketType;
 
