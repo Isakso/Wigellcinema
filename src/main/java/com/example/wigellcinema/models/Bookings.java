@@ -18,4 +18,16 @@ public class Bookings {
     public Bookings(){
 
     }
+
+    public int getNumberOfGuests() {
+        return numberOfGuests;
+    }
+
+    public LocalDate getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(LocalDate bookingDate) {
+        this.bookingDate = bookingDate;
+    }
 }
