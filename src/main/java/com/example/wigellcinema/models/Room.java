@@ -13,6 +13,10 @@ public class Room {
     @Column(name = "room_type")
     private String roomType;
 
+    public Room(){
+
+    }
+
     public int getId() {
         return id;
     }
@@ -29,7 +33,12 @@ public class Room {
         this.maxGuests = maxGuests;
     }
 
+
     public String getRoomType() {
         return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 }

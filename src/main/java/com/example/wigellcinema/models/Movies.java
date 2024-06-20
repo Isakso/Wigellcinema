@@ -2,8 +2,6 @@ package com.example.wigellcinema.models;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
 public class Movies {
     @Id
@@ -14,11 +12,10 @@ public class Movies {
     private String movieTitle;
     @Column(name = "genre")
     private String genre;
-
-    @Column(name = "Actor")
-    private String actor;
-    @Column(name = "release_date")
-    private Date releaseDate;
+    @Column(name = "age_limit")
+    private int ageLimit;
+    @Column(name = "movie_length")
+    private int movieLength;
     public int getId() {
         return id;
     }
@@ -43,11 +40,19 @@ public class Movies {
         this.genre = genre;
     }
 
-    public String getActor() {
-        return actor;
+    public int getMovieLength() {
+        return movieLength;
     }
 
-    public void setActor(String actor) {
-        this.actor = actor;
+    public void setMovieLength(int movieLength) {
+        this.movieLength = movieLength;
+    }
+
+    public int getAgeLimit() {
+        return ageLimit;
+    }
+
+    public void setAgeLimit(int ageLimit) {
+        this.ageLimit = ageLimit;
     }
 }

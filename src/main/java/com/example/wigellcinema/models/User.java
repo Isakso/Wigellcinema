@@ -3,18 +3,22 @@ package com.example.wigellcinema.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "customers")
-public class Customer {
+@Table(name = "users")
+public class User {
     @Id
-    @GeneratedValue
-    @Column(name ="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="user_id")
     private int id;
-    @Column(name ="name", nullable = false)
+    @Column(name ="user_name", nullable = false)
     private String user_name;
-    @Column(name ="address", nullable = false)
-    private String address;
+    @ManyToOne
+    @JoinColumn(name = "address_id" )
+    private Address address;
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
-    public Customer(){
+    public User(){
 
     }
     public int getId() {
@@ -29,10 +33,10 @@ public class Customer {
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }
