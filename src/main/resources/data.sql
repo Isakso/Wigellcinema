@@ -1,3 +1,4 @@
+
 -- Insert data into the address table
 INSERT INTO address (postal_code, city, street, country)
 VALUES

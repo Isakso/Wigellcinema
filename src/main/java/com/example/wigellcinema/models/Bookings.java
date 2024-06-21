@@ -23,7 +23,7 @@ public class Bookings {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "movie_id")
     private Movies movies;
     @OneToOne

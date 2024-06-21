@@ -5,14 +5,18 @@ import com.example.wigellcinema.models.Movies;
 import com.example.wigellcinema.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
+@Transactional
 public class MovieService implements MovieServiceInterface{
 
     @Autowired
     private MovieRepository movieRepository;
+
 
     @Override
     public List<Movies> getAllMovies() {
@@ -30,9 +34,11 @@ public class MovieService implements MovieServiceInterface{
 
     @Override
     public void deleteMovie(int id) {
-        if(movieRepository.existsById(id))
+        Optional<Movies> optionalMovie =movieRepository.findById(id);
+        if(optionalMovie.isPresent())
         {
-            movieRepository.deleteById(id);
+            Movies movie = optionalMovie.get();
+            movieRepository.delete(movie);
         }
         throw new ResourceNotFoundException("Movie", "with id", id + "Could not be deleted ");
 

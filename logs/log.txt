@@ -1,0 +1,6 @@
+2024-06-21 17:29:38,664 * INFO * com.example.wigellcinema.controllers.UserController * getAllBookings * Fetching all bookings
+2024-06-21 18:24:29,392 * INFO * com.example.wigellcinema.controllers.UserController * bookRoom * Processing booking request
+2024-06-21 18:24:29,706 * INFO * com.example.wigellcinema.controllers.UserController * bookRoom * Booking created successfully
+2024-06-21 18:25:25,981 * INFO * com.example.wigellcinema.controllers.UserController * bookRoom * Processing booking request
+2024-06-21 18:25:26,031 * INFO * com.example.wigellcinema.controllers.UserController * bookRoom * Booking created successfully
+2024-06-21 19:48:21,976 * INFO * com.example.wigellcinema.controllers.AdminController * deleteMovie * deleting a movie

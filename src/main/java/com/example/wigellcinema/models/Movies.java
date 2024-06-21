@@ -2,6 +2,8 @@ package com.example.wigellcinema.models;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "movies")
 public class Movies {
@@ -17,6 +19,9 @@ public class Movies {
     private int ageLimit;
     @Column(name = "movie_length")
     private int movieLength;
+
+    @OneToMany(mappedBy = "movies", cascade = CascadeType.REMOVE)
+    private Set<Bookings> bookings;
     public int getId() {
         return id;
     }
@@ -51,5 +56,12 @@ public class Movies {
 
     public void setAgeLimit(int ageLimit) {
         this.ageLimit = ageLimit;
+    }
+
+    public Set<Bookings> getBookings() {
+        return bookings;
+    }
+    public void setBookings(Set<Bookings> bookings) {
+        this.bookings = bookings;
     }
 }
