@@ -3,6 +3,7 @@ package com.example.wigellcinema.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "movies")
 public class Movies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +21,7 @@ public class Movies {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMovieTitle() {
+     public String getMovieTitle() {
         return movieTitle;
     }
 

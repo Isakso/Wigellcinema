@@ -9,6 +9,7 @@ import com.example.wigellcinema.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v4")
-@PreAuthorize("hasRole('ADMIN')")
 public class AdminController {
 
     @Autowired
@@ -41,6 +41,7 @@ public class AdminController {
     }
     @DeleteMapping("/deletemovie/{id}")
     @PreAuthorize("hasRole('ADMIN')")
+    @Transactional
     public ResponseEntity<String> deleteMovie(@PathVariable int id){
         movieService.deleteMovie(id);
         return ResponseEntity.ok("Movie with Id "+ id +" deleted");
