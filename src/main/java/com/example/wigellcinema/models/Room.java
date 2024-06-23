@@ -8,9 +8,9 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room-id")
     private int id;
-    @Column(name = "max_guests")
+    @Column(name = "max_guests", length = 40)
     private int maxGuests;
-    @Column(name = "room_type")
+    @Column(name = "room_type", nullable = false)
     private String roomType;
 
     public Room(){

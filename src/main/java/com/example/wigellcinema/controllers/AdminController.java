@@ -45,10 +45,10 @@ public class AdminController {
     }
     @DeleteMapping("/deletemovie/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> deleteMovie(@PathVariable int id){
+    public ResponseEntity<String> deleteMovie(@PathVariable int id, @RequestBody Movies movie){
         logger.info("deleting a movie");
-               movieService.deleteMovie(id);
-        logger.info("movie is deleted ");
+               movieService.deleteMovie(movie.getId());
+               logger.info("movie is deleted ");
         return ResponseEntity.ok("Movie with Id "+ id +" deleted");
     }
     @PutMapping("/updateroom/{id}")

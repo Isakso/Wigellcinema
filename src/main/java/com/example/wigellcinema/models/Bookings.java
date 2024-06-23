@@ -12,10 +12,10 @@ public class Bookings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "no_of_guests")
+    @Column(name = "no_of_guests", length = 45)
     private int numberOfGuests;
 
-    @Column(name = "booking_date")
+    @Column(name = "booking_date",nullable = false)
     private LocalDate bookingDate;
 
 
