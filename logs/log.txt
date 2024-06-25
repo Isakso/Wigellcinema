@@ -1,1 +1,1 @@
-2024-06-22 16:19:55,201 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-25 11:21:39,928 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
