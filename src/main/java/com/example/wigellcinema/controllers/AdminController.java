@@ -1,5 +1,6 @@
 package com.example.wigellcinema.controllers;
 
+import com.example.wigellcinema.exceptions.ResourceNotFoundException;
 import com.example.wigellcinema.models.Movies;
 import com.example.wigellcinema.models.Room;
 import com.example.wigellcinema.models.User;
@@ -8,6 +9,7 @@ import com.example.wigellcinema.service.RoomService;
 import com.example.wigellcinema.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -45,12 +47,18 @@ public class AdminController {
     }
     @DeleteMapping("/deletemovie/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> deleteMovie(@PathVariable int id, @RequestBody Movies movie){
-        logger.info("deleting a movie");
-               movieService.deleteMovie(movie.getId());
-               logger.info("movie is deleted ");
-        return ResponseEntity.ok("Movie with Id "+ id +" deleted");
+    public ResponseEntity<String> deleteMovie(@PathVariable int id) {
+        logger.info("Attempting to delete movie with ID: {}");
+        try {
+            movieService.deleteMovie(id);
+            logger.info("Movie with ID {} is deleted");
+            return ResponseEntity.ok("Movie with ID " + id + " deleted");
+        } catch (ResourceNotFoundException ex) {
+            logger.error("Error deleting movie: {}");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+        }
     }
+
     @PutMapping("/updateroom/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public  ResponseEntity<Room> updateRoom(@PathVariable int id, @Validated @RequestBody Room room){

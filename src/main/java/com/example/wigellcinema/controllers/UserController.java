@@ -24,7 +24,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v4")
 
-@PreAuthorize("hasRole('USER')")
+
 public class UserController {
     private static final Logger logger = Logger.getLogger(UserController.class);
 
@@ -37,7 +37,6 @@ public class UserController {
     private BookingService bookingService;
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private BookingRepository bookingRepository;
 
@@ -73,18 +72,38 @@ public class UserController {
     }
     @PutMapping("/updatebooking/{id}")
     @PreAuthorize("hasRole('USER')")
-    ResponseEntity<Bookings> updateBooking(@PathVariable int id, @Validated @RequestBody Bookings booking){
 
-        Bookings updatedBooking = bookingService.UpdateBooking(id, booking);
+    public ResponseEntity<Bookings> updateBooking(@PathVariable int id, @RequestBody Bookings booking) {
         logger.info("Updating booking with ID: {}");
-        if (updatedBooking!= null) {
-            logger.info("booking-updated successfully");
-            return ResponseEntity.ok(updatedBooking);
-                 } else {
-            return ResponseEntity.notFound().build();
 
+        try {
+            Bookings updatedBooking = bookingService.updateBooking(id, booking);
+
+            if (updatedBooking != null) {
+                logger.info("Booking updated successfully with ID: {}");
+                return ResponseEntity.ok(updatedBooking);
+            } else {
+                logger.warn("Booking with ID: {} not found");
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception ex) {
+            logger.error("Error updating booking with ID: {}", ex);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
-
+    }
+    @GetMapping("/bookings/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<Bookings> getBookingById(@PathVariable("id") int id) {
+        Bookings booking = bookingService.getBookingById(id);
+        if (booking != null) {
+            return ResponseEntity.ok(booking);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
+
+
 }
+
+

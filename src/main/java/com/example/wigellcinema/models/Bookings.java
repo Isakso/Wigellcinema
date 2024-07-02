@@ -33,6 +33,9 @@ public class Bookings {
     @Column(name = "total_cost")
     private long totalCost;
 
+    @Column(name = "total_cost_eur")
+    private Double totalCostEur;
+
     public Bookings() {
         // Default constructor
     }
@@ -83,12 +86,17 @@ public class Bookings {
         this.room = room;
     }
 
-
     public long getTotalCost() {
         return totalCost;
     }
 
     public void setTotalCost(long totalCost) {
         this.totalCost = totalCost;
+    }
+    public Double getTotalCostEur() {
+        return totalCostEur;
+    }
+    public void setTotalCostEur(Double totalCostEur) {
+        this.totalCostEur = totalCostEur;
     }
 }

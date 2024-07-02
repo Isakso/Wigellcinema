@@ -34,15 +34,15 @@ public class MovieService implements MovieServiceInterface{
 
     @Override
     public void deleteMovie(int id) {
-        Optional<Movies> optionalMovie =movieRepository.findById(id);
-        if(optionalMovie.isPresent())
-        {
+        Optional<Movies> optionalMovie = movieRepository.findById(id);
+        if (optionalMovie.isPresent()) {
             Movies movie = optionalMovie.get();
             movieRepository.delete(movie);
+        } else {
+            throw new ResourceNotFoundException("Movie", "with id", id + " could not be found");
         }
-        throw new ResourceNotFoundException("Movie", "with id", id + "Could not be deleted ");
-
     }
+
     @Override
     public Movies UpdateMovie(int id, Movies updatedMovie) {
 

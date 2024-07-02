@@ -10,7 +10,8 @@ public interface BookingServiceInterface {
 
     List<Bookings> myBookings();
 
-   Bookings UpdateBooking(int id, Bookings booking);
+   Bookings updateBooking(int id, Bookings booking);
+   Bookings getBookingById(int id);
 
 
 }

@@ -1,0 +1,31 @@
+2024-06-29 18:19:57,337 * INFO * com.example.wigellcinema.controllers.UserController * getAllMovies * Fetching all movies
+2024-06-29 18:30:26,734 * INFO * com.example.wigellcinema.controllers.UserController * getAllMovies * Fetching all movies
+2024-06-29 18:37:10,464 * INFO * com.example.wigellcinema.controllers.UserController * getAllMovies * Fetching all movies
+2024-06-29 19:26:15,297 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 19:26:28,708 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 19:52:54,689 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:11:38,624 * INFO * com.example.wigellcinema.controllers.UserController * getAllMovies * Fetching all movies
+2024-06-29 20:12:03,477 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:12:15,929 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:12:17,420 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:12:19,165 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:13:45,621 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:13:54,960 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:13:56,365 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:13:57,485 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:13:58,597 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:13:59,780 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:16:06,277 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:25:19,038 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:26:17,532 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:26:22,286 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:26:23,423 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:26:29,515 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:26:30,765 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:26:32,447 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:55:19,270 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:55:34,002 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 20:55:45,078 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 21:22:45,450 * INFO * com.example.wigellcinema.controllers.AdminController * getAllCustomers * Fetching all customers
+2024-06-29 21:30:53,798 * INFO * com.example.wigellcinema.controllers.AdminController * deleteMovie * Attempting to delete movie with ID: {}
+2024-06-29 21:30:54,029 * INFO * com.example.wigellcinema.controllers.AdminController * deleteMovie * Movie with ID {} is deleted

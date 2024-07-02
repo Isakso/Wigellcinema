@@ -1,9 +1,6 @@
 package com.example.wigellcinema.models;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
-
-import java.util.Set;
 
 @Entity
 @Table(name = "movies")
@@ -21,15 +18,14 @@ public class Movies {
     @Column(name = "movie_length", nullable = false)
     private int movieLength;
 
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private Bookings bookings;
 
-    @OneToMany(cascade=CascadeType.REMOVE, fetch=FetchType.EAGER,mappedBy="movies", orphanRemoval=true)
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
-    private Set<Bookings> bookings;
     public int getId() {
         return id;
     }
 
-     public String getMovieTitle() {
+    public String getMovieTitle() {
         return movieTitle;
     }
 
@@ -61,10 +57,4 @@ public class Movies {
         this.ageLimit = ageLimit;
     }
 
-    public Set<Bookings> getBookings() {
-        return bookings;
-    }
-    public void setBookings(Set<Bookings> bookings) {
-        this.bookings = bookings;
-    }
 }
